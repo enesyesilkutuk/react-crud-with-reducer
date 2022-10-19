@@ -28,7 +28,7 @@ const EmployeeList = () => {
  
   return (
     <>
-      <div className="table-title">
+      <div className="table-title no-select">
         <div className="row">
           <div className="col-sm-6">
             <h2>Manage <b>Employees</b></h2>
@@ -42,7 +42,7 @@ const EmployeeList = () => {
         </div>
       </div>
      { alert && <Alert className="text-primary" variant="success" onClose={() => setAlert(false)} dismissible>Employee List Successfully Updated</Alert> }
-      <table className="table table-striped table-hover">
+      <table className="table table-striped table-hover no-select">
         <thead>
           <tr>
             <th>Name</th>
