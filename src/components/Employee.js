@@ -18,7 +18,7 @@ const Employee = ({employee, changeAlert}) => {
         dispatch({type:"remove_employee", payload: employee.id});
         changeAlert(alert);
         setTimeout(() => {
-            changeAlert(alert)
+            changeAlert(alert);
           }, 3000);
     };
     

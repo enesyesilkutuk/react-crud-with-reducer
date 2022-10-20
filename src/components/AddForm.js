@@ -5,22 +5,22 @@ import { EmployeeContext } from '../context/EmployeeContext';
 
 const AddForm = ({changeAlert}) => {
 
-    const { dispatch, alert } = useContext(EmployeeContext);
+    const { dispatch } = useContext(EmployeeContext);
    
     const [employeeValues, setEmployeeValues] = useState({ name : "", email : "", address : "", phone : "" });
     
     const handleEmployeeValues = (e) => {
         setEmployeeValues({...employeeValues, [e.target.name] : e.target.value})
-}
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({type: "add_employee", payload: employeeValues});
-    changeAlert(alert);
+    changeAlert();
     setTimeout(() => {
-      changeAlert(alert)
+      changeAlert();
     }, 3000);
-  }
+  };
 
   return (
     <Form onSubmit={handleSubmit}>

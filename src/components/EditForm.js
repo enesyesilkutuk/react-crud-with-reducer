@@ -5,7 +5,7 @@ import { EmployeeContext } from '../context/EmployeeContext';
 
 const EditForm = ({theEmployee, changeAlert}) => {
 
-    const { dispatch, alert } = useContext(EmployeeContext);
+    const { dispatch } = useContext(EmployeeContext);
   
     const employee = theEmployee;
     const id = employee.id;
@@ -18,9 +18,9 @@ const EditForm = ({theEmployee, changeAlert}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch({type:"update_employee", payload: updatedEmployee});
-        changeAlert(alert);
+        changeAlert();
         setTimeout(() => {
-            changeAlert(alert)
+            changeAlert();
           }, 3000);
     }
     return (

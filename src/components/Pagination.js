@@ -6,9 +6,10 @@ const Pagination = ({pages, setCurrentPage, currentEmployees}) => {
     const { sortedEmployees } = useContext(EmployeeContext);
     
     const numOfPages = [];
+    
     for (let i=1; i <= pages; i++) {
         numOfPages.push(i);
-    }
+    };
 
     const [currentButton, setCurrentButton] = useState(1);
 

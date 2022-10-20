@@ -15,7 +15,7 @@ const EmployeeList = () => {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  const changeAlert = (prev) => setAlert((prev) => !prev);
+  const changeAlert = () => setAlert((prev) => !prev);
 
   useEffect(() => {
     handleClose();
