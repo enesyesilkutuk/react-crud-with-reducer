@@ -41,7 +41,7 @@ const EmployeeList = () => {
           </div>
         </div>
       </div>
-     { alert && <Alert className="text-primary" variant="success" onClose={() => setAlert(false)} dismissible>Employee List Successfully Updated</Alert> }
+     { alert && <Alert className="text-primary" variant="success" onClose={changeAlert} dismissible>Employee List Successfully Updated</Alert> }
       <table className="table table-striped table-hover no-select">
         <thead>
           <tr>
