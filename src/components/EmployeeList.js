@@ -1,12 +1,12 @@
 import Employee from "./Employee";
-import { useContext, useEffect, useState } from "react";
-import { EmployeeContext } from "../context/EmployeeContext";
+import { useEffect, useState } from "react";
+import { useEmployeeContext } from "../context/EmployeeContext";
 import { Button, Modal, Alert } from "react-bootstrap";
 import AddForm from "./AddForm";
 import Pagination from "./Pagination";
 
 const EmployeeList = () => {
-  const { sortedEmployees, alert, setAlert } = useContext(EmployeeContext);
+  const { sortedEmployees, alert, setAlert } = useEmployeeContext();
   //const [showAlert, setShowAlert] = useState(false);
   const [show, setShow] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);

@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from "react";
-import { EmployeeContext } from "../context/EmployeeContext";
+import { useEffect, useState } from "react";
+import { useEmployeeContext } from "../context/EmployeeContext";
 import { Button, Modal, OverlayTrigger, Tooltip } from "react-bootstrap";
 import EditForm from "./EditForm";
 
 const Employee = ({employee, changeAlert}) => {
 
-    const { dispatch, alert } = useContext(EmployeeContext);
+    const { dispatch, alert } = useEmployeeContext();
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
@@ -16,7 +16,7 @@ const Employee = ({employee, changeAlert}) => {
 
     const deleteEmployee = () => {
         dispatch({type:"remove_employee", payload: employee.id});
-        changeAlert(alert);
+        changeAlert();
         setTimeout(() => {
             changeAlert(alert);
           }, 3000);

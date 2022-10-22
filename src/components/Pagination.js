@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { EmployeeContext } from '../context/EmployeeContext';
+import React, { useEffect, useState } from 'react';
+import { useEmployeeContext } from '../context/EmployeeContext';
 
 const Pagination = ({pages, setCurrentPage, currentEmployees}) => {
 
-    const { sortedEmployees } = useContext(EmployeeContext);
+    const { sortedEmployees } = useEmployeeContext();
     
     const numOfPages = [];
     

@@ -1,7 +1,7 @@
-import { createContext, useEffect, useReducer, useState } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-export const EmployeeContext = createContext();
+const EmployeeContext = createContext();
 
 const EmployeeContextProvider = ({children}) => {
 
@@ -52,3 +52,5 @@ const EmployeeContextProvider = ({children}) => {
 }
 
 export default EmployeeContextProvider;
+
+export const useEmployeeContext = () => useContext(EmployeeContext);
